@@ -32,6 +32,9 @@ public class User implements UserDetails {
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    private String resetToken;
+
     @Override
     // Renvoie une collection d'objets GrantedAuthority qui représentent les autorisations accordées à l'utilisateur
     public Collection<? extends GrantedAuthority> getAuthorities() {

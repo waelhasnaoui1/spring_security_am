@@ -78,6 +78,10 @@
 			<artifactId>json</artifactId>
 			<version>20210307</version> <!-- Replace the version with the latest available version -->
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>

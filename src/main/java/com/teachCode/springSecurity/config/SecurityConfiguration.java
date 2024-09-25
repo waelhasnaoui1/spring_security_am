@@ -29,7 +29,10 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
                 //Une liste blanche des requêtes {/api/v1/auth/**},
-                .authorizeHttpRequests(request -> request.requestMatchers("/api/v1/auth/**")
+                .authorizeHttpRequests(request -> request
+                        .requestMatchers("/api/v1/auth/forgot-password",
+                                "/api/v1/auth/reset-password").permitAll()
+                        .requestMatchers("/api/v1/auth/**")
                         //toute autre requête doit être authentifiée
                         .permitAll().anyRequest().authenticated())
                 //Gestion sans état,
